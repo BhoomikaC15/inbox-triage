@@ -1,0 +1,11 @@
+# Keywords for the "might_interest" label, one per line. Edit this to your real interests.
+# Lines starting with # are ignored. Matching is case-insensitive.
+hackathon
+open source
+contest
+rated round
+editorial
+competitive programming
+internship
+machine learning
+algorithms

@@ -1,0 +1,171 @@
+# Dev set: 12 fictional emails. The recipient is the fictional "Sam".
+# Format: header lines, one blank line, then the body.
+# Emails are separated by a line that contains only =====
+# Labels: deadline | needs_reply | might_interest | skippable
+# deadline_date is only filled when label is deadline (YYYY-MM-DD).
+id: d01
+from: Prof. R. Mehta <rmehta@college.example>
+to: Sam <sam@college.example>
+sent: 2026-10-19
+subject: DBMS Assignment 3 - submission
+label: deadline
+deadline_date: 2026-10-28
+notes: Two dates in the email. The deadline is the first one, the second is a hard cutoff.
+
+Dear students,
+
+Assignment 3 (normalization and SQL queries) is now open on the course portal. Submit your PDF by 28 October, 11:59 PM. Late submissions lose 20% of the marks and nothing is accepted after 30 October.
+
+Regards,
+Prof. Mehta
+=====
+id: d02
+from: Placement Cell <placements@college.example>
+to: Sam <sam@college.example>
+sent: 2026-10-20
+subject: Resume form - action needed
+label: deadline
+deadline_date: 2026-10-23
+notes: Relative date. Sent on a Tuesday, so "this Friday" is 23 October.
+
+Hello,
+
+Companies visiting next month need your details. Please fill the resume form below by this Friday, 5 PM. Students who have not filled it will not be shortlisted for the first round.
+
+https://forms.example/resume-2026
+
+Placement Cell
+=====
+id: d03
+from: Ananya <ananya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: slides?
+label: needs_reply
+
+Hey Sam,
+
+Did you finish your part of the slides? Can you send it to me when you get a chance? Also, which day works for everyone for the team call, Saturday or Sunday?
+
+Ananya
+=====
+id: d04
+from: ShopEasy <offers@shopeasy.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: FLASH SALE ends tonight! Up to 70% off
+label: skippable
+notes: Fake urgency. Looks like a deadline, is not one.
+
+Last chance! Our biggest sale of the year ends at midnight tonight. Up to 70% off on electronics, fashion and more. Shop now before it's gone!
+
+Unsubscribe | View in browser
+=====
+id: d05
+from: no-reply@payments.example
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Your one-time password
+label: skippable
+
+482913 is your one-time password for logging in. It is valid for 10 minutes. Do not share it with anyone.
+
+If you did not request this, ignore this message.
+=====
+id: d06
+from: Open Source Fest <hello@osfest.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: First-time contributor workshop - Nov 2
+label: might_interest
+notes: Optional event with dates. Not a deadline for you, so not "deadline".
+
+Hi there,
+
+New to open source? Join our free online workshop on 2 November where maintainers walk you through finding a good first issue and sending your first pull request. Registration is open until 30 October.
+
+Seats are limited.
+=====
+id: d07
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Re: Re: hackathon team
+label: needs_reply
+notes: The ask is in the top message. The quoted part below is old.
+
+Hey Sam, quick one. The organisers want the final team list soon. Can you confirm if you're joining us, yes or no?
+
+Rohan
+
+> On Mon, Priya wrote:
+> I'm in, and I can handle the frontend.
+> On Sun, Rohan wrote:
+> Anyone else up for the hackathon this month?
+=====
+id: d08
+from: ClassHub <billing@classhub.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: Payment received
+label: skippable
+notes: Contains a future date (next billing) but nothing for Sam to do.
+
+Hi Sam,
+
+We have received your payment of Rs. 499 for the Algorithms course. Your invoice is attached. The next billing date is 17 November.
+
+Thank you for learning with ClassHub.
+=====
+id: d09
+from: Prof. R. Mehta <rmehta@college.example>
+to: Sam <sam@college.example>
+sent: 2026-10-19
+subject: Project viva scheduling
+label: deadline
+deadline_date: 2026-10-22
+notes: Needs a reply AND has a deadline. Deadline wins. Sent on a Monday, so Thursday is 22 October.
+
+Dear students,
+
+Please reply to this email with the days you are available for the project viva next week. I need all replies by Thursday evening so I can publish the schedule on Friday.
+
+Prof. Mehta
+=====
+id: d10
+from: CP Weekly <digest@cpweekly.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: This week: Saturday rated round + editorial picks
+label: might_interest
+
+Hi,
+
+This week's picks: a rated round on Saturday at 8 PM IST, a short article on binary search on the answer, and the editorial for last week's hardest problem.
+
+Happy solving!
+=====
+id: d11
+from: NetLink <notifications@netlink.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: 3 people viewed your profile
+label: skippable
+
+See who's looking at your profile this week. Upgrade to premium to see all viewers.
+
+Manage notification settings
+=====
+id: d12
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: FYI: Priya's form
+label: skippable
+notes: The deadline belongs to someone else. Nothing is needed from Sam.
+
+Hi all,
+
+Just keeping everyone in the loop. Priya has to submit her travel form by Friday, and I have already reminded her. Nothing needed from the rest of us.
+
+Rohan

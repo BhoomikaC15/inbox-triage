@@ -1,0 +1,1118 @@
+# Test set: fictional emails for the fictional recipient Sam. Never train or tune on this file.
+id: t001
+from: FitTrack <report@fittrack.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Your weekly report
+label: skippable
+
+This week you walked 38,000 steps, up 5% from last week. Keep going!
+
+FitTrack
+=====
+id: t002
+from: Python Delhi <events@pythondelhi.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: November meetup
+label: might_interest
+
+Our November meetup is on the 8th. Two lightning talks and a project demo night. Free entry.
+
+Python Delhi
+=====
+id: t003
+from: NetLink <notifications@netlink.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Congratulate Arjun on his new job
+label: skippable
+
+Arjun Mehra started a new role. Say congratulations with one click.
+
+Manage notification settings
+=====
+id: t004
+from: SkyJet <deals@skyjet.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Fly more, pay less
+label: skippable
+
+Exclusive fares for you. Book any domestic flight this month and save up to 25%. Terms apply.
+
+Unsubscribe
+=====
+id: t005
+from: Central Library <library@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Membership expiry
+label: deadline
+deadline_date: 2026-10-31
+
+Your library membership expires on 31 October. Renew at the desk before then to keep borrowing books.
+
+Library staff
+=====
+id: t006
+from: Senior Divya <divya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: meetup group
+label: needs_reply
+
+Want to join our open-source meetup group chat? Tell me and I will add you.
+
+Divya
+=====
+id: t007
+from: CP Weekly <digest@cpweekly.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: This week: rated round and editorial picks
+label: might_interest
+
+This week: a rated round on Saturday at 8 PM IST, a short guide to segment trees, and the editorial for last week's hardest problem.
+
+Happy solving!
+=====
+id: t008
+from: Hostel Office <hostel@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Fee payment reminder
+label: deadline
+deadline_date: 2026-10-23
+notes: Relative weekday. Sent Wednesday, so Friday is 23 October.
+
+Dear resident, the hostel fee for the second half is due by Friday. Rooms of students with pending dues will be reviewed next week.
+
+Warden
+=====
+id: t009
+from: Prof. Iyer <iyer@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Lab record submission
+label: deadline
+deadline_date: 2026-10-27
+
+Please submit your completed lab record for Experiments 1 to 8 to the department office by 27 October. Records without the instructor's signature will not be accepted.
+
+Prof. Iyer
+=====
+id: t010
+from: QuickPay <security@quickpay.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Your password was changed
+label: skippable
+notes: Confirmation of something Sam already did.
+
+This is a confirmation that your password was changed successfully a few minutes ago. If this was you, nothing more is needed.
+
+QuickPay
+=====
+id: t011
+from: Open Source Cell <osc@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Git and GitHub workshop
+label: might_interest
+
+A hands-on workshop on Git branching and pull requests will be held on Saturday 31 October in the lab. Bring your laptop. Optional.
+
+Open Source Cell
+=====
+id: t012
+from: Karan <karan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: DBMS notes
+label: needs_reply
+
+Can you share your DBMS notes for the last two units? Mine are incomplete.
+
+Karan
+=====
+id: t013
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: branch
+label: needs_reply
+
+Which branch should I push my changes to, main or dev?
+
+Rohan
+=====
+id: t014
+from: Prof. Das <das@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: abstract
+label: needs_reply
+notes: Asks for a heads-up with no date, so needs_reply.
+
+Please let me know once you have updated the abstract and I will read it again.
+
+Prof. Das
+=====
+id: t015
+from: ShopEasy <feedback@shopeasy.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: How was your delivery?
+label: skippable
+
+Rate your recent delivery experience in one click. It takes less than a minute and helps us improve.
+
+Unsubscribe
+=====
+id: t016
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Re: testing
+label: needs_reply
+notes: The new ask is on top. The quoted part is old.
+
+Sounds good. One more thing: can you also take the testing part? I am swamped with the frontend.
+
+Rohan
+
+> On Wed, Sam wrote:
+> I can take the API part.
+=====
+id: t017
+from: HR Team <hr@talentbridge.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Offer letter details
+label: needs_reply
+
+Could you confirm that the spelling of your name and address in the attached offer letter is correct?
+
+HR Team
+=====
+id: t018
+from: QuickPay <hello@quickpay.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: Welcome to QuickPay!
+label: skippable
+
+Welcome aboard! Here is a quick tour of the app. Explore rewards, send money to friends and pay bills in one place.
+
+QuickPay
+=====
+id: t019
+from: Mentor Vikram <vikram@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: resume
+label: needs_reply
+notes: No question mark. It is still a request waiting on Sam.
+
+Send me your resume when you can and I will forward it to my contact at the company.
+
+Vikram
+=====
+id: t020
+from: Admin Office <admin@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: ID card photo
+label: deadline
+deadline_date: 2026-11-01
+
+Your new ID card needs a passport photo. Upload it on the student portal by 1 November. Cards will be printed only for uploaded photos.
+
+Admin Office
+=====
+id: t021
+from: HOD Office <hod.cse@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Attendance condonation
+label: deadline
+deadline_date: 2026-10-29
+
+Students below 75% attendance must submit the condonation application by 5 PM on 29 October. Applications after that will not be considered.
+
+Office of the HOD
+=====
+id: t022
+from: BankNorth Statements <statements@northline.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Your monthly statement is available
+label: skippable
+
+Your account statement for September is available in the app. Download it from the statements page.
+
+Northline Bank
+=====
+id: t023
+from: Aman <aman@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: November rent
+label: deadline
+deadline_date: 2026-11-01
+
+Hi, just a heads up that November rent needs to be transferred by 1 November. Same account as before.
+
+Aman
+=====
+id: t024
+from: Alumni Cell <alumni@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: Alumni talk: careers in ML
+label: might_interest
+
+Two alumni working in machine learning will talk about their paths on 7 November at 5 PM in the auditorium. Open to all students.
+
+Alumni Cell
+=====
+id: t025
+from: Placement Cell <placements@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Signed consent form
+label: deadline
+deadline_date: 2026-10-23
+notes: Relative duration. 3 days from 20 October is 23 October.
+
+Please upload the signed consent form within 3 days. Students who skip it cannot sit for the campus drive.
+
+Placement Cell
+=====
+id: t026
+from: Central Library <library@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Overdue books
+label: deadline
+deadline_date: 2026-10-30
+notes: Day/month/year format.
+
+You have two books past their return date. Please return them to the issue counter by 30/10/2026 to avoid a fine of Rs. 5 per day.
+
+Library staff
+=====
+id: t027
+from: CloudLab <students@cloudlab.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Free cloud credits for students
+label: might_interest
+
+Verified students can get free cloud credits to host projects and run experiments. Sign up with your college email.
+
+CloudLab
+=====
+id: t028
+from: Dean's Office <dean@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: NOC for internship
+label: deadline
+deadline_date: 2026-11-06
+
+Please send the signed NOC from your internship company by 5 PM on 6th November. Without it, your internship credit cannot be processed.
+
+Dean's Office
+=====
+id: t029
+from: Priya <priya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: demo on Monday
+label: deadline
+deadline_date: 2026-10-26
+
+The demo is Monday 26 Oct at 10 AM. Can you merge the login PR before that? Otherwise we have to demo without it.
+
+Priya
+=====
+id: t030
+from: OpenLearn <hello@openlearn.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: Free course: Data structures in depth
+label: might_interest
+
+A new free course on data structures with weekly problem sets is now live. Self-paced, with a certificate if you finish.
+
+OpenLearn
+=====
+id: t031
+from: Priya <priya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: logo
+label: needs_reply
+
+Which of the two logo options do you prefer, A or B? Reply with a letter so I can finalize.
+
+Priya
+=====
+id: t032
+from: CafeBill <billing@cafebill.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Receipt for your order
+label: skippable
+
+Thank you for your order. Your receipt for Rs. 240 is attached. We hope to see you again.
+
+CafeBill
+=====
+id: t033
+from: DevWeekly <digest@devweekly.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Top posts this week
+label: might_interest
+
+Top posts this week: building a local-first notes app, why your tests are slow, and a beginner's guide to fine-tuning on a budget.
+
+DevWeekly
+=====
+id: t034
+from: Sister <tia@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: photos
+label: needs_reply
+notes: No question mark, still a request.
+
+Send me the photos from the trip please. I want to print some.
+
+Tia
+=====
+id: t035
+from: Prof. Rao <rao@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Two versions
+label: needs_reply
+
+I received two versions of your assignment. Which one should I grade?
+
+Prof. Rao
+=====
+id: t036
+from: Meera, TalentBridge <meera@talentbridge.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Interview interest
+label: needs_reply
+
+Hi Sam, we liked your profile. Are you interested in a first call with our engineering team? Let me know which times work for you.
+
+Meera
+=====
+id: t037
+from: Survey Cell <survey@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Faculty feedback form
+label: deadline
+deadline_date: 2026-10-24
+
+Please complete the faculty feedback form before midnight on 24 Oct. Hall tickets are released only after the form is filled.
+
+Survey Cell
+=====
+id: t038
+from: CashBack <rewards@cashback.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: You earned Rs. 12 cashback
+label: skippable
+
+Your cashback of Rs. 12 has been added to your wallet. It will be used automatically on your next purchase.
+
+CashBack
+=====
+id: t039
+from: Neha <neha@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: you'd like this
+label: might_interest
+notes: Personal FYI, no ask.
+
+Found a great blog post on binary lifting. Thought you would like it. No rush, just sharing.
+
+Neha
+=====
+id: t040
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: database choice
+label: needs_reply
+
+I think we should move from SQLite to Postgres for the project. Thoughts?
+
+Rohan
+=====
+id: t041
+from: Prof. Das <das@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Viva slots
+label: deadline
+deadline_date: 2026-10-24
+
+Please confirm your preferred viva slot from the sheet by this Saturday. Unconfirmed students will be given the last slot.
+
+Prof. Das
+=====
+id: t042
+from: Ananya <ananya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: dinner
+label: needs_reply
+
+Dinner plans for tonight: pizza or biryani? Vote so I can order.
+
+Ananya
+=====
+id: t043
+from: Exam Cell <examcell@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: End-semester exam form
+label: deadline
+deadline_date: 2026-11-04
+notes: Two dates. The normal last date is the first one; the late-fee date is a fallback.
+
+The last date for filling the end-semester examination form is 4 November. A late fee applies if the form is filled up to 6 November. Forms after that will not be accepted.
+
+Examination Cell
+=====
+id: t044
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: FYI: Dev's presentation
+label: skippable
+notes: Someone else's date.
+
+Heads up that Dev presents his project on Thursday. I am going to watch, but no need for the rest of us to attend.
+
+Rohan
+=====
+id: t045
+from: Admin Office <admin@college.example>
+to: All Students <students@college.example>
+sent: 2026-10-19
+subject: Holiday notice
+label: skippable
+notes: Informational circular, nothing to do.
+
+The college will remain closed on 31 October on account of a public holiday. Classes resume on 2 November.
+
+Administration
+=====
+id: t046
+from: ContestHub <noreply@contesthub.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Round 412 starts Saturday
+label: might_interest
+
+Round 412 starts on Saturday at 8:05 PM IST. Two hours, six problems, rated for everyone.
+
+ContestHub
+=====
+id: t047
+from: BiteNow <promo@bitenow.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Hungry? 40% off your next order
+label: skippable
+notes: Question mark, but it is marketing.
+
+Hungry? Use code BITE40 and get 40% off. Offer expires in 2 hours, so order now!
+
+Unsubscribe
+=====
+id: t048
+from: Placement Cell <placements@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Mock interview
+label: deadline
+deadline_date: 2026-10-27
+notes: Mandatory fixed-date event.
+
+Your mock interview is on Tuesday 27 October at 3 PM in the seminar hall. Attendance is mandatory for registered students.
+
+Placement Cell
+=====
+id: t049
+from: Central Library <newsletter@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: Library newsletter
+label: skippable
+
+This month: new arrivals in the fiction shelf, updated opening hours and a note about the quiet zone on the second floor.
+
+Library staff
+=====
+id: t050
+from: Priya <priya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: intro slide
+label: needs_reply
+
+You were assigned the intro slide. Are you still okay to do it, or should I take over?
+
+Priya
+=====
+id: t051
+from: Merit Foundation <apply@meritfoundation.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-16
+subject: Scholarship for CS students
+label: might_interest
+notes: Optional opportunity. Not an obligation for Sam.
+
+The Merit Foundation is offering scholarships for third-year CS students. Applications are open until 15 November. Eligibility details are on our site.
+
+Merit Foundation
+=====
+id: t052
+from: DevWeekly <digest@devweekly.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: A new guide to dynamic programming
+label: might_interest
+
+We just published a visual guide to dynamic programming with 20 worked problems from easy to hard. Worth bookmarking.
+
+DevWeekly
+=====
+id: t053
+from: PyDigest <news@pydigest.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: 10 projects that stand out on a resume
+label: might_interest
+
+We collected ten project ideas that recruiters tend to remember, from small CLI tools to full systems with benchmarks.
+
+PyDigest
+=====
+id: t054
+from: StreamBox <billing@streambox.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: Your subscription renews soon
+label: skippable
+notes: Future date but nothing for Sam to do.
+
+Your plan will renew automatically on 17 November for Rs. 199. No action is needed.
+
+StreamBox
+=====
+id: t055
+from: Karan <karan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: api key
+label: needs_reply
+
+Quick question about the API key. Did you put it in the .env file or in the config file? I cannot find it.
+
+Karan
+=====
+id: t056
+from: PyDigest <news@pydigest.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: What's new in this Python release
+label: might_interest
+
+This issue covers faster startup, improved error messages and a few new standard library helpers. Includes a short example for each.
+
+PyDigest
+=====
+id: t057
+from: Neha <neha@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: that book
+label: needs_reply
+
+Do you remember the name of that algorithms book you recommended last month? I want to order it.
+
+Neha
+=====
+id: t058
+from: Calendar <calendar@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Accepted: Team sync
+label: skippable
+
+Priya accepted your invitation for Team sync. No further action needed.
+
+Calendar
+=====
+id: t059
+from: Prof. Mehta <rmehta@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Your last submission
+label: needs_reply
+
+The file in your last submission was empty. Please explain what happened.
+
+Prof. Mehta
+=====
+id: t060
+from: ShopEasy <offers@shopeasy.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: FLASH SALE ends tonight! Up to 70% off
+label: skippable
+notes: Fake urgency.
+
+Last chance! Our biggest sale ends at midnight. Up to 70% off on electronics and fashion. Shop now before it is gone!
+
+Unsubscribe | View in browser
+=====
+id: t061
+from: GitHub <notifications@github.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Re: [sam/notes-app] Add search feature (PR #14)
+label: needs_reply
+notes: Looks like an automated notification, but a maintainer is waiting for Sam.
+
+maintainer-jo commented: Thanks for the PR. Could you add a test for the empty input case? Happy to merge after that.
+
+Reply to this email directly or view it on GitHub.
+=====
+id: t062
+from: Admin Office <admin@college.example>
+to: All Students <students@college.example>
+sent: 2026-10-18
+subject: Pre-final year circular
+label: skippable
+notes: Applies to another batch.
+
+This circular is for pre-final year students of the Mechanical department. Please register for industrial visits by 28 October through your class representative.
+
+Administration
+=====
+id: t063
+from: Mom <mom@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: weekend
+label: needs_reply
+
+Are you coming home this weekend? Let me know so I can plan the food.
+
+Mom
+=====
+id: t064
+from: Coding Club <club@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Volunteers needed
+label: needs_reply
+
+We need one more volunteer for the registration desk at the club fair. Can you do it? Tell us either way.
+
+Coding Club
+=====
+id: t065
+from: Learning Portal <portal@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Assignment reminder
+label: deadline
+deadline_date: 2026-10-23
+
+Reminder: your Operating Systems assignment is due tomorrow at 9 AM. Submissions on the portal only.
+
+Learning Portal
+=====
+id: t066
+from: TalentBridge <assessments@talentbridge.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Complete your online assessment
+label: deadline
+deadline_date: 2026-10-26
+notes: ISO date.
+
+Thank you for applying. Please complete the online assessment using your personal link. The link expires on 2026-10-26 and cannot be reissued.
+
+Hiring team
+=====
+id: t067
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: FYI: Anita's form
+label: skippable
+notes: Someone else's deadline.
+
+Hi all, Anita has to submit her travel form by Friday. I am helping her with it, so nothing needed from the rest of us.
+
+Rohan
+=====
+id: t068
+from: GitHub <notifications@github.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: dev-anita starred sam/notes-app
+label: skippable
+
+dev-anita starred your repository sam/notes-app. You now have 12 stars.
+
+Unsubscribe from these emails
+=====
+id: t069
+from: ShopEasy <cart@shopeasy.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Forgot something?
+label: skippable
+
+You left items in your cart. Complete your order today and enjoy free delivery.
+
+Unsubscribe
+=====
+id: t070
+from: ShipFast <track@shipfast.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Your parcel has shipped
+label: skippable
+
+Good news, your parcel is on its way and should reach you in 3 to 5 days. Track it using the link below.
+
+ShipFast
+=====
+id: t071
+from: Prof. Das <das@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Number in your report
+label: needs_reply
+
+Your report mentions a 12% improvement but I cannot find where the number comes from. Please clarify the source when you can.
+
+Prof. Das
+=====
+id: t072
+from: HackSprint <team@hacksprint.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Your project submission
+label: deadline
+deadline_date: 2026-10-25
+
+Hi Sam, a reminder that your team's project submission is due Sunday, 25 October, 11:59 PM. Include your repository link and a short demo video.
+
+HackSprint team
+=====
+id: t073
+from: NetLink <notifications@netlink.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: 5 people viewed your profile
+label: skippable
+
+See who is looking at your profile this week. Upgrade to premium to see all viewers.
+
+Manage notification settings
+=====
+id: t074
+from: TalentBridge Jobs <alerts@talentbridge.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: 15 new jobs matching your search
+label: skippable
+
+Senior Accountant, Site Supervisor, Sales Executive and 12 more jobs are waiting for you. Create an alert to never miss one.
+
+Unsubscribe
+=====
+id: t075
+from: TalentBridge Jobs <jobs@talentbridge.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Summer internships for CS students
+label: might_interest
+
+Several companies have opened summer internship roles for third-year CS students, including backend, ML and security roles. Browse the openings at your leisure.
+
+TalentBridge
+=====
+id: t076
+from: no-reply@payments.example
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Your verification code
+label: skippable
+
+391204 is your verification code. It is valid for 10 minutes. Do not share it with anyone.
+
+If you did not request this, ignore this message.
+=====
+id: t077
+from: Prof. Iyer <iyer@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Automatic reply: Out of office
+label: skippable
+
+Thank you for your email. I am out of office until 2 November with limited access to email. I will reply when I return.
+
+Prof. Iyer
+=====
+id: t078
+from: Ananya <ananya@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: notes
+label: needs_reply
+
+Did you get the notes I sent yesterday? Just reply when you see this so I know.
+
+Ananya
+=====
+id: t079
+from: Northline Bank <statements@northline.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: Your card bill is ready
+label: deadline
+deadline_date: 2026-10-28
+
+Your statement is ready. Total amount due: Rs. 3,240. Pay by 28 Oct to avoid a late payment charge.
+
+Northline Bank
+=====
+id: t080
+from: AI Society <ai@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: Talk: Fine-tuning small language models
+label: might_interest
+
+An online talk on fine-tuning small language models will be held on 3 November at 6 PM. Free for all students. No registration needed.
+
+AI Society
+=====
+id: t081
+from: Open Source Cell <osc@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: Open source program info session
+label: might_interest
+
+We are holding an info session on 30 October about how students can join large open-source mentorship programs. Optional, but great for beginners.
+
+Open Source Cell
+=====
+id: t082
+from: Prof. Iyer <iyer@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Report schedule
+label: deadline
+deadline_date: 2026-11-03
+notes: Two dates. Next upcoming one is the draft.
+
+The draft of your report is due 3 November. The final version is due 17 November. I will give feedback on the draft within a week.
+
+Prof. Iyer
+=====
+id: t083
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: your section of the report
+label: deadline
+deadline_date: 2026-10-22
+notes: "Tomorrow" resolved against the sent date.
+
+Hey, I'm compiling the final report tonight. I need your section by tomorrow evening or I will have to leave it out.
+
+Rohan
+=====
+id: t084
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: bus seats
+label: needs_reply
+
+I'm booking the bus for the hackathon trip. Tell me if you want a seat and I'll add you.
+
+Rohan
+=====
+id: t085
+from: Robotics Club <robotics@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Open house
+label: might_interest
+
+The Robotics Club is holding an open house on 29 October. Come see our projects and try the drones. Everyone is welcome.
+
+Robotics Club
+=====
+id: t086
+from: Prof. Mehta <rmehta@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: Project topic
+label: deadline
+deadline_date: 2026-10-27
+notes: Reply is requested but there is a date, so deadline wins. Sent Thursday, "next Tuesday" is 27 October.
+
+Please email me your final project topic by next Tuesday. I will not assign topics for anyone who has not chosen one.
+
+Prof. Mehta
+=====
+id: t087
+from: Rohan <rohan@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Re: files
+label: skippable
+notes: The old question is quoted. The new message needs nothing.
+
+Thanks, got it! All good now.
+
+Rohan
+
+> On Tue, Rohan wrote:
+> Can you send me the dataset files?
+> On Tue, Sam wrote:
+> Sure, sending now.
+=====
+id: t088
+from: Neha <neha@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-22
+subject: exam
+label: needs_reply
+
+Hey, how was the exam today?
+
+Neha
+=====
+id: t089
+from: QuickPay KYC <kyc@quickpay.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Action required by Oct 31: update your KYC
+label: deadline
+deadline_date: 2026-10-31
+notes: The date is only in the subject.
+
+Please update your documents in the app. Accounts without updated details will be restricted for withdrawals.
+
+QuickPay
+=====
+id: t090
+from: TechFest <fest@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-17
+subject: TechFest 2026 registrations open
+label: might_interest
+
+Registrations for TechFest events including a hackathon, robotics league and quiz are open. Check the schedule and pick what you like.
+
+TechFest team
+=====
+id: t091
+from: Coding Club <club@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-20
+subject: Confirm your team for the contest
+label: deadline
+deadline_date: 2026-10-23
+
+You registered as team captain for the inter-college contest. Confirm your three team members on the portal before 6 PM on Friday 23 October, otherwise the registration is cancelled.
+
+Coding Club
+=====
+id: t092
+from: Scholarship Office <scholarships@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-15
+subject: Merit scholarship documents
+label: deadline
+deadline_date: 2026-11-02
+
+Shortlisted students must hand in their income certificate and marksheets no later than 2 November. Late documents cannot be considered.
+
+Scholarship Office
+=====
+id: t093
+from: Mailing List <cse-list@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: Minutes of the faculty meeting
+label: skippable
+notes: Meeting is for faculty, not Sam.
+
+Attached are the minutes of last week's faculty meeting. The next faculty meeting will be on Monday at 3 PM in the conference room.
+
+Secretary
+=====
+id: t094
+from: CampusHack <hello@campushack.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-18
+subject: CampusHack 2026 is open
+label: might_interest
+notes: Optional event. Registration date is not an obligation.
+
+CampusHack is a 24-hour student hackathon on 14 November. Registration is open until 8 November. Prizes, mentors and free food.
+
+CampusHack team
+=====
+id: t095
+from: Prof. Rao <rao@college.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-21
+subject: Quiz 2 on Thursday
+label: deadline
+deadline_date: 2026-10-29
+notes: Mandatory fixed-date event counts as a deadline.
+
+Quiz 2 will be held on Thursday 29 October at 10 AM in Room 204. Syllabus is units 3 and 4. Bring your ID card.
+
+Prof. Rao
+=====
+id: t096
+from: Aman <aman@mail.example>
+to: Sam <sam@mail.example>
+sent: 2026-10-19
+subject: AC
+label: needs_reply
+
+Is the AC working fine now after the repair? Tell me if it is still making noise.
+
+Aman
