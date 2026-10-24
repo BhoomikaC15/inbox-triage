@@ -1,0 +1,52 @@
+{
+  "n": 96,
+  "accuracy": 0.9791666666666666,
+  "accuracy_ci95": [
+    0.9479166666666666,
+    1.0
+  ],
+  "macro_f1": 0.9786977886977887,
+  "per_label": {
+    "deadline": {
+      "precision": 0.96,
+      "recall": 0.96,
+      "f1": 0.96,
+      "support": 25
+    },
+    "needs_reply": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 25
+    },
+    "might_interest": {
+      "precision": 1.0,
+      "recall": 0.9473684210526315,
+      "f1": 0.972972972972973,
+      "support": 19
+    },
+    "skippable": {
+      "precision": 0.9642857142857143,
+      "recall": 1.0,
+      "f1": 0.9818181818181818,
+      "support": 27
+    }
+  },
+  "dangerous_skips": [
+    1,
+    50
+  ],
+  "deadlines_found": [
+    24,
+    25
+  ],
+  "deadline_dates_exact": [
+    23,
+    25
+  ],
+  "deadlines_invented": 1,
+  "mistake_ids": [
+    "t005",
+    "t046"
+  ]
+}
