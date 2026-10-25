@@ -45,23 +45,48 @@ Rules:
 JSON format: {"label": "...", "deadline_date": "YYYY-MM-DD or null", "evidence": "..."}"""
 
 
+MAX_BODY_CHARS = 3000
+LONG_URL = re.compile(r"https?://\S{40,}")
+
+
+def visible_body(body):
+    """What the model sees: very long links (tracking URLs) are shortened and the
+    text is cut so a long promo email cannot overflow the model's context window."""
+    text = LONG_URL.sub("[link]", body)
+    if len(text) > MAX_BODY_CHARS:
+        text = text[:MAX_BODY_CHARS] + "\n[email cut here]"
+    return text
+
+
 def build_user_message(email):
     return (
         f"SENT: {email['sent']} ({date.fromisoformat(email['sent']).strftime('%A')})\n"
         f"FROM: {email['from']}\n"
         f"SUBJECT: {email['subject']}\n\n"
-        f"{email['body']}"
+        f"{visible_body(email['body'])}"
     )
 
 
-def call_ollama(base_url, model, email, timeout):
+def system_prompt(interests=None):
+    """The long instruction prompt, optionally with the reader's own interests."""
+    if not interests:
+        return SYSTEM
+    return SYSTEM + (
+        "\n\nSam's interests: " + ", ".join(interests) + ". "
+        "Promotions, recommendations and newsletters are skippable, unless they clearly match "
+        "these interests, in which case use might_interest. A friendly human sender name "
+        "does not make a mass mailing needs_reply."
+    )
+
+
+def call_ollama(base_url, model, email, timeout, system=SYSTEM):
     payload = {
         "model": model,
         "stream": False,
         "format": "json",
         "options": {"temperature": 0, "num_ctx": 2048, "num_predict": 150},
         "messages": [
-            {"role": "system", "content": SYSTEM},
+            {"role": "system", "content": system},
             {"role": "user", "content": build_user_message(email)},
         ],
     }
@@ -109,7 +134,8 @@ def verify(email, obj):
     text = f"{email['subject']}\n{strip_quotes(email['body'])}"
 
     evidence = str(obj.get("evidence") or "").strip()
-    if evidence and norm(evidence) not in norm(email["subject"] + " " + email["body"]):
+    if evidence and norm(evidence) not in norm(email["subject"] + " " + email["body"]) \
+            and norm(evidence) not in norm(email["subject"] + " " + visible_body(email["body"])):
         flags.append("evidence_not_in_email")
 
     deadline_date = None
@@ -134,7 +160,7 @@ def classify(email, args):
     raw, error = None, None
     for attempt in range(2):
         try:
-            raw = call_ollama(args.base_url, args.model, email, args.timeout)
+            raw = call_ollama(args.base_url, args.model, email, args.timeout, args.system)
         except Exception as e:  # connection refused, timeout, bad response
             error = f"{type(e).__name__}: {e}"
             continue
@@ -157,7 +183,13 @@ def main():
     ap.add_argument("--out", default="preds_gemma.jsonl")
     ap.add_argument("--limit", type=int, default=0, help="only the first N emails")
     ap.add_argument("--timeout", type=int, default=300)
+    ap.add_argument("--interests", help="text file with one interest per line (lines starting with # are ignored)")
     args = ap.parse_args()
+    interests = None
+    if args.interests:
+        interests = [l.strip() for l in open(args.interests, encoding="utf-8")
+                     if l.strip() and not l.startswith("#")]
+    args.system = system_prompt(interests)
 
     emails = [json.loads(l) for l in open(args.emails, encoding="utf-8") if l.strip()]
     if args.limit:

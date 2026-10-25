@@ -15,9 +15,10 @@ import email.utils
 import json
 from datetime import date
 
+from otp import find_otp
 from postprocess import apply as apply_fallback
 
-LABELS = ["deadline", "needs_reply", "might_interest", "skippable"]
+LABELS = ["deadline", "needs_reply", "might_interest", "skippable", "otp"]
 
 
 def load(path):
@@ -44,6 +45,7 @@ def main():
     ap.add_argument("--show-gold", action="store_true", help="mark emails where the label differs from the gold label")
     ap.add_argument("--model-name", default="")
     ap.add_argument("--title", default="Inbox triage")
+    ap.add_argument("--no-otp", action="store_true", help="do not split one-time-password emails into their own label")
     args = ap.parse_args()
 
     emails = load(args.emails)
@@ -67,6 +69,11 @@ def main():
             "deadlineLabel": nice_date(p["deadline_date"]) if p.get("deadline_date") else None,
             "evidence": p.get("evidence", ""), "flags": p.get("flags", []),
         }
+        hit = None if args.no_otp else find_otp(e)
+        if hit:  # a rule, not the model, owns one-time-password emails
+            item["label"], item["code"], item["evidence"] = "otp", hit[0], hit[1]
+            item["deadline"] = item["deadlineLabel"] = None
+            item["flags"] = [f for f in item["flags"] if f != "model_failed"] + ["otp_by_rule"]
         if args.show_gold and "label" in e:
             item["gold"] = e["label"]
         items.append(item)
@@ -92,6 +99,7 @@ TEMPLATE = r"""<!doctype html>
   --select:#d3e3fd; --focus:#0b57d0;
   --dl:#b3261e; --dl-bg:#fce8e6; --rp:#0b57d0; --rp-bg:#e8f0fe;
   --in:#146c2e; --in-bg:#e6f4ea; --sk:#5f6368; --sk-bg:#eef0f2; --mark:#fff3b0;
+  --ot:#7a3fb5; --ot-bg:#f3e8fd;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -99,6 +107,7 @@ TEMPLATE = r"""<!doctype html>
     --select:#33435e; --focus:#8ab4f8;
     --dl:#f2b8b5; --dl-bg:#4a2321; --rp:#aecbfa; --rp-bg:#26364f;
     --in:#a8dab5; --in-bg:#22392a; --sk:#b9bec5; --sk-bg:#34363b; --mark:#5c5320;
+    --ot:#d7aefb; --ot-bg:#3b2a4d;
   }
 }
 :root[data-theme="dark"]{
@@ -106,6 +115,7 @@ TEMPLATE = r"""<!doctype html>
   --select:#33435e; --focus:#8ab4f8;
   --dl:#f2b8b5; --dl-bg:#4a2321; --rp:#aecbfa; --rp-bg:#26364f;
   --in:#a8dab5; --in-bg:#22392a; --sk:#b9bec5; --sk-bg:#34363b; --mark:#5c5320;
+  --ot:#d7aefb; --ot-bg:#3b2a4d;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Roboto,"Segoe UI",system-ui,-apple-system,sans-serif}
@@ -127,7 +137,8 @@ nav .n{margin-left:auto;color:var(--muted);font-size:12px}
 nav button[aria-current="true"] .n{color:var(--text)}
 .dot{width:12px;height:12px;border-radius:50%;flex:none}
 .l-deadline{--c:var(--dl);--b:var(--dl-bg)} .l-needs_reply{--c:var(--rp);--b:var(--rp-bg)}
-.l-might_interest{--c:var(--in);--b:var(--in-bg)} .l-skippable{--c:var(--sk);--b:var(--sk-bg)}
+.l-might_interest{--c:var(--in);--b:var(--in-bg)} .l-skippable{--c:var(--sk);--b:var(--sk-bg)} .l-otp{--c:var(--ot);--b:var(--ot-bg)}
+.cards .card:last-child:nth-child(odd){grid-column:1/-1}
 .dot{background:var(--c)}
 main{flex:1;min-width:0;background:var(--surface);border-radius:16px;min-height:70vh;overflow:hidden}
 .pad{padding:24px 28px}
@@ -195,12 +206,14 @@ var LABELS = [
  {k:'deadline', n:'Deadlines', h:'Things you must do by a date'},
  {k:'needs_reply', n:'Needs reply', h:'Someone is waiting for your answer'},
  {k:'might_interest', n:'Might interest you', h:'Optional, but possibly worth a look'},
- {k:'skippable', n:'Skippable', h:'Ads, receipts, alerts and FYIs'}
+ {k:'skippable', n:'Skippable', h:'Ads, receipts, alerts and FYIs'},
+ {k:'otp', n:'OTP codes', h:'Codes that expire in minutes. Use them, then forget them'}
 ];
 var FLAGS = {
  date_not_found_in_email:'The model’s date was not in the email, so it was dropped',
  date_resolved_by_code:'Date worked out by code from the email text',
  evidence_not_in_email:'The quoted line could not be matched to the email',
+ otp_by_rule:'Recognised by a rule (the email names a one-time code and contains one), not by the model',
  deadline_without_valid_date:'Deadline label without a usable date',
  model_failed:'The model failed, so this email is shown to be safe',
  unparseable:'The model’s answer could not be read'
@@ -280,7 +293,8 @@ function renderDetail(i){
   box.appendChild(mt);
   var why = el('div','why');
   why.appendChild(el('div','k','Why: '+meta(i.label).n+(i.deadlineLabel? ' · '+i.deadlineLabel:'')));
-  why.appendChild(i.evidence ? el('q','',i.evidence) : el('span','', 'No supporting line was given.'));
+  var failed = (i.flags||[]).indexOf('model_failed')>=0;
+  why.appendChild(i.evidence ? el('q','',i.evidence) : el('span','', failed ? 'The model could not read this email, so it is shown here to be safe. Please check it yourself.' : 'No supporting line was given.'));
   box.appendChild(why);
   var b = el('div','body'); highlight(b, i.body, i.evidence); box.appendChild(b);
   (i.flags||[]).forEach(function(f){ if(FLAGS[f]) box.appendChild(el('span','flag',FLAGS[f])); });
@@ -294,7 +308,7 @@ function renderRow(i, m){
   r.appendChild(el('div','who',i.name));
   var msg = el('div','msg'); msg.appendChild(document.createTextNode(i.subject)); msg.appendChild(el('span','',' – '+i.snippet)); r.appendChild(msg);
   var w = el('div','when');
-  if(i.deadlineLabel) w.appendChild(el('span','chip',i.deadlineLabel)); else w.textContent=i.sentLabel;
+  if(i.deadlineLabel) w.appendChild(el('span','chip',i.deadlineLabel)); else if(i.code) w.appendChild(el('span','chip','Code '+i.code)); else w.textContent=i.sentLabel;
   r.appendChild(w);
   function toggle(){state.open = state.open===i.id ? null : i.id; render();}
   r.onclick=toggle; r.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}};
@@ -308,7 +322,7 @@ function renderList(m, list, title, k){
   back.onclick=function(){$('q').value=''; state.q=''; go('overview')};
   h.appendChild(back);
   if(k) h.appendChild(el('span','dot'));
-  h.appendChild(el('span','t',title)); h.appendChild(el('span','c',list.length+' emails'));
+  h.appendChild(el('span','t',title)); h.appendChild(el('span','c',list.length+(list.length===1?' email':' emails')));
   m.appendChild(h);
   if(!list.length){m.appendChild(el('div','empty','Nothing here.')); return;}
   list.forEach(function(i){renderRow(i,m)});

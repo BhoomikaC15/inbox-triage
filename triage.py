@@ -32,6 +32,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--base-url", default="http://localhost:11434")
     ap.add_argument("--workdir", default="triage_work")
+    ap.add_argument("--interests", default="interests.txt", help="your interests, one per line")
     args = ap.parse_args()
 
     os.makedirs(args.workdir, exist_ok=True)
@@ -41,6 +42,8 @@ def main():
 
     run("ingest.py", args.mailbox, "--out", emails)
     cmd = ["llm_classify.py", emails, "--model", args.model, "--out", preds, "--base-url", args.base_url]
+    if os.path.exists(args.interests):
+        cmd += ["--interests", args.interests]
     if args.limit:
         cmd += ["--limit", str(args.limit)]
     run(*cmd)
